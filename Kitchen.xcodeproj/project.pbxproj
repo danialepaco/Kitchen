@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		240A23232544664F00ED2097 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240A23222544664F00ED2097 /* MainVC.swift */; };
 		240A232B254466F700ED2097 /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240A232A254466F700ED2097 /* Meal.swift */; };
+		240A233125446AFF00ED2097 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240A233025446AFF00ED2097 /* APIService.swift */; };
+		240A233925446F9900ED2097 /* MealTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240A233825446F9900ED2097 /* MealTVCell.swift */; };
 		24F9A857254460E0003376F4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F9A856254460E0003376F4 /* AppDelegate.swift */; };
 		24F9A859254460E0003376F4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F9A858254460E0003376F4 /* SceneDelegate.swift */; };
 		24F9A85E254460E0003376F4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24F9A85C254460E0003376F4 /* Main.storyboard */; };
@@ -41,6 +43,8 @@
 /* Begin PBXFileReference section */
 		240A23222544664F00ED2097 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		240A232A254466F700ED2097 /* Meal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meal.swift; sourceTree = "<group>"; };
+		240A233025446AFF00ED2097 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		240A233825446F9900ED2097 /* MealTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealTVCell.swift; sourceTree = "<group>"; };
 		24F9A853254460E0003376F4 /* Kitchen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kitchen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24F9A856254460E0003376F4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		24F9A858254460E0003376F4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -101,13 +105,6 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		240A231F254465CF00ED2097 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
 		240A2320254465D600ED2097 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -117,12 +114,21 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		240A23212544662900ED2097 /* ViewControllers */ = {
+		240A23212544662900ED2097 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				240A23222544664F00ED2097 /* MainVC.swift */,
+				240A233825446F9900ED2097 /* MealTVCell.swift */,
 			);
-			path = ViewControllers;
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		240A232F25446A0100ED2097 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				240A233025446AFF00ED2097 /* APIService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		24F9A84A254460E0003376F4 = {
@@ -154,10 +160,10 @@
 				24F9A858254460E0003376F4 /* SceneDelegate.swift */,
 				24F9A85F254460E4003376F4 /* Assets.xcassets */,
 				24F9A864254460E4003376F4 /* Info.plist */,
-				240A23212544662900ED2097 /* ViewControllers */,
+				240A23212544662900ED2097 /* Controllers */,
 				240A2320254465D600ED2097 /* View */,
-				240A231F254465CF00ED2097 /* ViewModel */,
 				240A231E254465B600ED2097 /* Model */,
+				240A232F25446A0100ED2097 /* Services */,
 			);
 			path = Kitchen;
 			sourceTree = "<group>";
@@ -442,8 +448,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				240A232B254466F700ED2097 /* Meal.swift in Sources */,
+				240A233125446AFF00ED2097 /* APIService.swift in Sources */,
 				24F9A857254460E0003376F4 /* AppDelegate.swift in Sources */,
 				240A23232544664F00ED2097 /* MainVC.swift in Sources */,
+				240A233925446F9900ED2097 /* MealTVCell.swift in Sources */,
 				24F9A859254460E0003376F4 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
