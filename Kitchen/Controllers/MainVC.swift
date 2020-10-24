@@ -11,11 +11,13 @@ import Kingfisher
 class MainVC: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
-    
+    @IBOutlet weak var searchView: UISearchBar!
+
     var meals: [Meal] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        searchView.becomeFirstResponder()
     }
 }
 
@@ -31,9 +33,14 @@ extension MainVC: UITableViewDataSource {
         let meal = meals[indexPath.row]
         cell.nameLabel.text = meal.name
         cell.categoryLabel.text = meal.category
-        let url = URL(string: meal.thumb)
-        cell.mealImage.kf.setImage(with: url)
+        cell.mealImage.kf.setImage(with: URL(string: meal.thumb))
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "DetailVC") as? DetailVC else { return }
+        vc.meal = meals[indexPath.row]
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
 

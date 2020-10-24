@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="GdE-5S-oSK">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
@@ -8,7 +8,23 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--MainVC-->
+        <!--Navigation Controller-->
+        <scene sceneID="vHJ-e8-bmp">
+            <objects>
+                <navigationController id="GdE-5S-oSK" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="haX-mE-aaO">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="CeB-z0-kQN"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tRI-j1-Kdt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-690" y="124"/>
+        </scene>
+        <!--Recipes-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="MainVC" customModule="Kitchen" customModuleProvider="target" sceneMemberID="viewController">
@@ -16,15 +32,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" placeholder="Busca tus recetas favoritas" translatesAutoresizingMaskIntoConstraints="NO" id="APb-S0-fYC">
-                                <rect key="frame" x="0.0" y="44" width="414" height="56"/>
+                            <searchBar contentMode="redraw" placeholder="Search for your favorite recipes" translatesAutoresizingMaskIntoConstraints="NO" id="APb-S0-fYC">
+                                <rect key="frame" x="0.0" y="88" width="414" height="56"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="5Yv-Ha-3S4"/>
                                 </connections>
                             </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Nvk-ij-GNv">
-                                <rect key="frame" x="0.0" y="100" width="414" height="762"/>
+                                <rect key="frame" x="0.0" y="144" width="414" height="718"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MealTVCell" rowHeight="78" id="tzy-U2-h3M" customClass="MealTVCell" customModule="Kitchen" customModuleProvider="target">
@@ -95,13 +111,56 @@
                             <constraint firstItem="Nvk-ij-GNv" firstAttribute="top" secondItem="APb-S0-fYC" secondAttribute="bottom" id="d3e-vx-Xpe"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Recipes" id="iOT-VA-7Y7"/>
                     <connections>
+                        <outlet property="searchView" destination="APb-S0-fYC" id="T3N-IR-oww"/>
                         <outlet property="tableView" destination="Nvk-ij-GNv" id="61S-XF-hwg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="140.57971014492756" y="123.88392857142857"/>
+        </scene>
+        <!--DetailVC-->
+        <scene sceneID="rHD-So-Kix">
+            <objects>
+                <viewController storyboardIdentifier="DetailVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ENH-jP-voV" customClass="DetailVC" customModule="Kitchen" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="m19-nz-lNh">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="da4-RF-3dh">
+                                <rect key="frame" x="20" y="64" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="9Yr-b7-PXz"/>
+                                    <constraint firstAttribute="width" secondItem="da4-RF-3dh" secondAttribute="height" multiplier="1:1" id="K2W-Ch-yWW"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="JhL-Bu-CBg">
+                                <rect key="frame" x="20" y="284" width="374" height="558"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="cBD-au-0GO"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="JhL-Bu-CBg" firstAttribute="top" secondItem="da4-RF-3dh" secondAttribute="bottom" constant="20" id="Tzf-Sv-PaB"/>
+                            <constraint firstItem="da4-RF-3dh" firstAttribute="top" secondItem="cBD-au-0GO" secondAttribute="top" constant="20" id="XRr-EK-i8K"/>
+                            <constraint firstItem="JhL-Bu-CBg" firstAttribute="leading" secondItem="cBD-au-0GO" secondAttribute="leading" constant="20" id="tC3-i1-cFn"/>
+                            <constraint firstItem="cBD-au-0GO" firstAttribute="trailing" secondItem="JhL-Bu-CBg" secondAttribute="trailing" constant="20" id="vQV-ef-FHo"/>
+                            <constraint firstItem="cBD-au-0GO" firstAttribute="bottom" secondItem="JhL-Bu-CBg" secondAttribute="bottom" constant="20" id="xT4-QV-hq1"/>
+                            <constraint firstItem="da4-RF-3dh" firstAttribute="leading" secondItem="cBD-au-0GO" secondAttribute="leading" constant="20" id="zhh-uk-jzS"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="instructionsLabel" destination="JhL-Bu-CBg" id="WNX-Bq-FL4"/>
+                        <outlet property="mealImage" destination="da4-RF-3dh" id="CpB-Jd-rmO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7u4-yB-Ym2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="890" y="124"/>
         </scene>
     </scenes>
     <resources>
