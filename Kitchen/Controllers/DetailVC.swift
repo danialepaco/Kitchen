@@ -28,4 +28,9 @@ class DetailVC: UIViewController {
             ingredientsLabel.text = "Ingredients:\n\n\(list)"
         }
     }
+    
+    @IBAction func openVideo(_ sender: Any) {
+        guard let url = URL(string: meal?.video ?? "") else { return }
+        UIApplication.shared.open(url)
+    }
 }

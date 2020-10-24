@@ -147,19 +147,30 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YdU-aK-WRN">
+                                <rect key="frame" x="97" y="149" width="46" height="30"/>
+                                <state key="normal" image="youtube"/>
+                                <connections>
+                                    <action selector="openVideo:" destination="ENH-jP-voV" eventType="touchUpInside" id="mOQ-6I-sbv"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="cBD-au-0GO"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="YdU-aK-WRN" firstAttribute="height" secondItem="da4-RF-3dh" secondAttribute="height" multiplier="0.15" id="00C-7g-gBf"/>
                             <constraint firstItem="LKC-E7-x8j" firstAttribute="leading" secondItem="da4-RF-3dh" secondAttribute="trailing" constant="20" id="9G5-qH-oT8"/>
+                            <constraint firstItem="YdU-aK-WRN" firstAttribute="width" secondItem="da4-RF-3dh" secondAttribute="width" multiplier="0.23" id="J3D-3x-ylM"/>
                             <constraint firstItem="JhL-Bu-CBg" firstAttribute="top" secondItem="da4-RF-3dh" secondAttribute="bottom" constant="20" id="Tzf-Sv-PaB"/>
                             <constraint firstItem="da4-RF-3dh" firstAttribute="top" secondItem="cBD-au-0GO" secondAttribute="top" constant="20" id="XRr-EK-i8K"/>
                             <constraint firstItem="cBD-au-0GO" firstAttribute="trailing" secondItem="LKC-E7-x8j" secondAttribute="trailing" constant="20" id="gAQ-b9-BoL"/>
                             <constraint firstItem="LKC-E7-x8j" firstAttribute="top" secondItem="cBD-au-0GO" secondAttribute="top" constant="20" id="lbT-gj-9Ra"/>
                             <constraint firstItem="JhL-Bu-CBg" firstAttribute="leading" secondItem="cBD-au-0GO" secondAttribute="leading" constant="20" id="tC3-i1-cFn"/>
                             <constraint firstItem="cBD-au-0GO" firstAttribute="trailing" secondItem="JhL-Bu-CBg" secondAttribute="trailing" constant="20" id="vQV-ef-FHo"/>
+                            <constraint firstItem="YdU-aK-WRN" firstAttribute="centerX" secondItem="da4-RF-3dh" secondAttribute="centerX" id="vpr-zA-iod"/>
                             <constraint firstItem="JhL-Bu-CBg" firstAttribute="top" secondItem="LKC-E7-x8j" secondAttribute="bottom" constant="20" id="wez-Vd-UwV"/>
                             <constraint firstItem="cBD-au-0GO" firstAttribute="bottom" secondItem="JhL-Bu-CBg" secondAttribute="bottom" constant="20" id="xT4-QV-hq1"/>
+                            <constraint firstItem="YdU-aK-WRN" firstAttribute="centerY" secondItem="da4-RF-3dh" secondAttribute="centerY" id="xYH-Ug-fri"/>
                             <constraint firstItem="da4-RF-3dh" firstAttribute="leading" secondItem="cBD-au-0GO" secondAttribute="leading" constant="20" id="zhh-uk-jzS"/>
                         </constraints>
                     </view>
@@ -175,6 +186,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="youtube" width="640" height="450.5"/>
         <systemColor name="secondaryLabelColor">
             <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
