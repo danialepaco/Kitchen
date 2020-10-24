@@ -6,6 +6,7 @@
 //
 
 import Alamofire
+import SwiftyJSON
 
 class APIService {
     
@@ -18,7 +19,18 @@ class APIService {
         AF.request("\(base)\(search)\(query)", method: .get).responseJSON { response in
             guard let data = response.data else { return}
             let jsonDecoder = JSONDecoder()
-            let meals = try! jsonDecoder.decode(Meals.self, from: data)
+            
+            var meals = try! jsonDecoder.decode(Meals.self, from: data)
+            let json = try! JSON(data: data)
+            for (index, meal) in json["meals"].arrayValue.enumerated() {
+                var ingredients: [String] = []
+                for index in 1...20 {
+                    if let ingredient = meal["strIngredient\(index)"].string, !ingredient.isEmpty {
+                        ingredients.append(ingredient)
+                    }
+                }
+                meals.meals[index].ingredients = ingredients
+            }
             completion(meals)
         }
     }

@@ -141,19 +141,30 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="LKC-E7-x8j">
+                                <rect key="frame" x="240" y="64" width="154" height="200"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="cBD-au-0GO"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="LKC-E7-x8j" firstAttribute="leading" secondItem="da4-RF-3dh" secondAttribute="trailing" constant="20" id="9G5-qH-oT8"/>
                             <constraint firstItem="JhL-Bu-CBg" firstAttribute="top" secondItem="da4-RF-3dh" secondAttribute="bottom" constant="20" id="Tzf-Sv-PaB"/>
                             <constraint firstItem="da4-RF-3dh" firstAttribute="top" secondItem="cBD-au-0GO" secondAttribute="top" constant="20" id="XRr-EK-i8K"/>
+                            <constraint firstItem="cBD-au-0GO" firstAttribute="trailing" secondItem="LKC-E7-x8j" secondAttribute="trailing" constant="20" id="gAQ-b9-BoL"/>
+                            <constraint firstItem="LKC-E7-x8j" firstAttribute="top" secondItem="cBD-au-0GO" secondAttribute="top" constant="20" id="lbT-gj-9Ra"/>
                             <constraint firstItem="JhL-Bu-CBg" firstAttribute="leading" secondItem="cBD-au-0GO" secondAttribute="leading" constant="20" id="tC3-i1-cFn"/>
                             <constraint firstItem="cBD-au-0GO" firstAttribute="trailing" secondItem="JhL-Bu-CBg" secondAttribute="trailing" constant="20" id="vQV-ef-FHo"/>
+                            <constraint firstItem="JhL-Bu-CBg" firstAttribute="top" secondItem="LKC-E7-x8j" secondAttribute="bottom" constant="20" id="wez-Vd-UwV"/>
                             <constraint firstItem="cBD-au-0GO" firstAttribute="bottom" secondItem="JhL-Bu-CBg" secondAttribute="bottom" constant="20" id="xT4-QV-hq1"/>
                             <constraint firstItem="da4-RF-3dh" firstAttribute="leading" secondItem="cBD-au-0GO" secondAttribute="leading" constant="20" id="zhh-uk-jzS"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="ingredientsLabel" destination="LKC-E7-x8j" id="pQk-wq-7aY"/>
                         <outlet property="instructionsLabel" destination="JhL-Bu-CBg" id="WNX-Bq-FL4"/>
                         <outlet property="mealImage" destination="da4-RF-3dh" id="CpB-Jd-rmO"/>
                     </connections>
