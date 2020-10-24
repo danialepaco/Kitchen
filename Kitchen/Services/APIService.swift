@@ -14,7 +14,8 @@ class APIService {
     
     private let base = "https://www.themealdb.com/api/json/v1/1/"
     private let search = "search.php?s="
-    
+    private let random = "random.php"
+
     func searchFor(query: String, completion: @escaping (Meals) -> Void) {
         AF.request("\(base)\(search)\(query)", method: .get).responseJSON { response in
             guard let data = response.data else { return}
@@ -32,6 +33,16 @@ class APIService {
                 meals.meals[index].ingredients = ingredients
             }
             completion(meals)
+        }
+    }
+    
+    func getRandomRecipe(completion: @escaping (Meal) -> Void) {
+        AF.request("\(base)\(random)", method: .get).responseJSON { response in
+            guard let data = response.data else { return}
+            let jsonDecoder = JSONDecoder()
+            var meals = try! jsonDecoder.decode(Meals.self, from: data)
+            guard let meal = meals.meals.first else { return }
+            completion(meal)
         }
     }
 }

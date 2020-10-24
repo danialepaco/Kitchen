@@ -40,7 +40,7 @@
                                 </connections>
                             </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Nvk-ij-GNv">
-                                <rect key="frame" x="0.0" y="144" width="414" height="718"/>
+                                <rect key="frame" x="0.0" y="323" width="414" height="539"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MealTVCell" rowHeight="78" id="tzy-U2-h3M" customClass="MealTVCell" customModule="Kitchen" customModuleProvider="target">
@@ -98,21 +98,29 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="Gcs-5k-3H7"/>
                                 </connections>
                             </tableView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cx7-A9-J4l">
+                                <rect key="frame" x="0.0" y="144" width="414" height="179"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cx7-A9-J4l" secondAttribute="trailing" id="1NL-PK-xu7"/>
                             <constraint firstItem="APb-S0-fYC" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="5XC-Gw-wpD"/>
+                            <constraint firstItem="cx7-A9-J4l" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.2" id="DAv-j3-HuJ"/>
                             <constraint firstItem="Nvk-ij-GNv" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="GCg-uI-6Jl"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Nvk-ij-GNv" secondAttribute="bottom" id="KgV-ec-tcK"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Nvk-ij-GNv" secondAttribute="bottom" id="KKH-gp-Vez"/>
                             <constraint firstItem="APb-S0-fYC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="LR0-Ie-Wbk"/>
                             <constraint firstItem="APb-S0-fYC" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Pgc-tj-LXa"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Nvk-ij-GNv" secondAttribute="trailing" id="YEK-Q2-WDX"/>
-                            <constraint firstItem="Nvk-ij-GNv" firstAttribute="top" secondItem="APb-S0-fYC" secondAttribute="bottom" id="d3e-vx-Xpe"/>
+                            <constraint firstItem="Nvk-ij-GNv" firstAttribute="top" secondItem="cx7-A9-J4l" secondAttribute="bottom" id="gWy-Ac-gYx"/>
+                            <constraint firstItem="cx7-A9-J4l" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="kj4-Al-Pkx"/>
+                            <constraint firstItem="cx7-A9-J4l" firstAttribute="top" secondItem="APb-S0-fYC" secondAttribute="bottom" id="oBQ-Hf-aEB"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Recipes" id="iOT-VA-7Y7"/>
                     <connections>
+                        <outlet property="banner" destination="cx7-A9-J4l" id="8Ex-L7-Tse"/>
                         <outlet property="searchView" destination="APb-S0-fYC" id="T3N-IR-oww"/>
                         <outlet property="tableView" destination="Nvk-ij-GNv" id="61S-XF-hwg"/>
                     </connections>

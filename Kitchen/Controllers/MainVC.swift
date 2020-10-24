@@ -12,12 +12,27 @@ class MainVC: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchView: UISearchBar!
+    @IBOutlet weak var banner: UIImageView!
 
     var meals: [Meal] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
         searchView.becomeFirstResponder()
+        changeBanner()
+        setupTimer()
+    }
+    
+    fileprivate func setupTimer() {
+        _ = Timer.scheduledTimer(withTimeInterval: 30.0, repeats: true) { timer in
+            self.changeBanner()
+        }
+    }
+    
+    fileprivate func changeBanner() {
+        APIService.shared.getRandomRecipe { meal in
+            self.banner.kf.setImage(with: URL(string: meal.thumb))
+        }
     }
 }
 
